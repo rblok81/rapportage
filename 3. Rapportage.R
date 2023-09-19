@@ -6,14 +6,16 @@
 rm(list = ls())
 
 # Libraries laden
-# Deze libraries moeten eenmalig worden geinstalleerd met install.packages()
-library(haven) # Package Voor het laden van spss data bestanden
-library(labelled) # Package om te werken met datalabels 
-library(readxl) # Package om te werken met exceldocumenten
-library(tidyverse) # Meer informatie over het tidyverse is te vinden op: https://www.tidyverse.org/
-library(mschart) # Package voor het aanmaken van office grafieken
-library(officer) # Package om Powerpoint (en andere MS Office) documenten aan te maken of te bewerken vanuit R
+install.packages("pacman") # pacman, een package management tool, om packages te installeren en in te laden
+library(pacman)
+p_load(haven, labelled, readxl, tidyverse, mschart, officer)
 
+# haven package: Voor het laden van spss data bestanden
+# labelled package: om te werken met datalabels 
+# readxl package: om te werken met exceldocumenten
+# tidyverse package: Meer informatie over het tidyverse is te vinden op: https://www.tidyverse.org/
+# mschart package: voor het aanmaken van office grafieken
+# Pofficerackage om Powerpoint (en andere MS Office) documenten aan te maken of te bewerken vanuit R
 
 # 1. Nepdata genereren ----------------------------------------------------
 data <- data.frame(GELUK = sample(x = c(NA, 0, 1), size = 10000, replace = T, prob = c(0.05, 0.15, 0.8)),
